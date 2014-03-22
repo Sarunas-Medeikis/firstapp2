@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
   def index
     @users = User.all
   end
@@ -10,6 +12,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to users_path, :notice => "User has been updated!" }
+      else
+        format.html { redirect_to edit_user_path(@user), :notice => "Sorry, couldn't update user. Try again!" }
+      end
+    end
   end
 
   def destroy
