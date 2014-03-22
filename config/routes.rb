@@ -1,12 +1,18 @@
 Firstapp2::Application.routes.draw do
-  get "article_page/create"
-  get "article_page/read"
-  get "article_page/update"
-  get "article_page/delete"
-  get "user_page/create"
-  get "user_page/read"
-  get "user_page/update"
-  get "user_page/delete"
+  resources :users
+
+  # Root '/'
+  root "users#index"
+
+  # Show Users
+  get "users/:id" => "users#show"
+  get "users/:id/edit" => "users#edit" 
+  get "users/:id/update" => "users#update"
+  get "users/:id/destroy" => "users#destroy"
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
