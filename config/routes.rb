@@ -1,4 +1,10 @@
 Firstapp2::Application.routes.draw do
+  get "articles/index"
+  get "articles/create"
+  get "articles/show"
+  get "articles/edit"
+  get "articles/update"
+  get "articles/destroy"
   resources :users
 
   # Root '/'
