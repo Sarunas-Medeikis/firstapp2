@@ -1,0 +1,23 @@
+<h1>Editing User</h1>
+
+<% if flash.now[:notice] %>
+	<p><%= flash.now[:notice] %></p>
+<% end %>
+
+<%= form_for @user do |f| %>
+
+<p>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+</p>
+<p>
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+</p>
+<p>
+	<%= f.submit %>
+</p>
+<% end %>
+<p>
+	<%= link_to 'Back to index', users_path %>
+</p>
