@@ -11,10 +11,11 @@ Firstapp2::Application.routes.draw do
   root "users#index"
 
   # Show Users
-  get "users/:id" => "users#show"
+  # get "users/:id" => "users#show"
   get "users/:id/edit" => "users#edit" 
   get "users/:id/update" => "users#update"
   get "users/:id/destroy" => "users#destroy"
+
 
 
 
