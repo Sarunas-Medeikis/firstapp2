@@ -1,14 +1,20 @@
 Firstapp2::Application.routes.draw do
-  get "articles/index"
-  get "articles/create"
-  get "articles/show"
-  get "articles/edit"
-  get "articles/update"
-  get "articles/destroy"
+  #get "articles/index"
+  #get "articles/create"
+  #get "articles/show"
+  #get "articles/edit"
+  #get "articles/update"
+  #get "articles/destroy"
   resources :users
-
+  resources :articles
   # Root '/'
   root "users#index"
+
+  # Show articles
+  # match '/new',    to: 'articles#new',    via: 'get'
+  get "articles/:id/update" => "articles#update"
+  get "articles/:id/edit" => "articles#edit"
+  get "articles/:id/destroy" => "articles#destroy"
 
   # Show Users
   # get "users/:id" => "users#show"
